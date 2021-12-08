@@ -1,0 +1,18 @@
+package com.livedata.sample.viewmodel
+
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.livedata.sample.model.User
+import com.livedata.sample.Utils
+
+class SecondViewModel : ViewModel() {
+    //Declare the live data obejct
+    var userList = MutableLiveData<List<User>>()
+    //Declare the errorMessage obejct
+    val errorMessage = MutableLiveData<String>()
+
+    fun getAllUsers() {
+        //assigning the local data into the live data
+        userList.value = Utils.populateList()
+    }
+}
